@@ -1,3 +1,4 @@
+package general;
 import towers.Tower;
 /**
  * health, money, avalible towers

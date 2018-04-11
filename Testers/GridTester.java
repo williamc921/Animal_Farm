@@ -1,3 +1,5 @@
+import general.Grid;
+import general.Player;
 import towers.Peashooter;
 public class GridTester {
 	public static void main(String args[]){
