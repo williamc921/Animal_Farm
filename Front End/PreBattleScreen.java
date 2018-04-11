@@ -53,7 +53,6 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			TowerDefense.towerdefense.setTitle("TowerDefense");
 			TowerDefense.towerdefense.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			TowerDefense.towerdefense.dispose();
-			TowerDefense.towerdefense.setUndecorated(true);
 			TowerDefense.towerdefense.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			TowerDefense.towerdefense.setVisible(true);
 			TowerDefense.towerdefense.repaint();

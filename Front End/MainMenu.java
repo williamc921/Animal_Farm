@@ -56,8 +56,6 @@ public class MainMenu extends JPanel implements ActionListener{
 			AnimalFarm.animalfarm = f;
 			AnimalFarm.animalfarm.setTitle("TowerDefense");
 			AnimalFarm.animalfarm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			AnimalFarm.animalfarm.dispose();
-			AnimalFarm.animalfarm.setUndecorated(true);
 			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			AnimalFarm.animalfarm.setVisible(true);
 			AnimalFarm.animalfarm.repaint();
