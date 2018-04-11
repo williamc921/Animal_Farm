@@ -3,7 +3,10 @@
 	<classpathentry kind="src" path="Front End"/>
 	<classpathentry kind="src" path="Back End"/>
 	<classpathentry kind="src" path="Testers"/>
+<<<<<<< Upstream, based on branch 'master' of https://github.com/EthanCarpenter/Animal_Farm
 	<classpathentry kind="src" path="Front End Folder"/>
+=======
+>>>>>>> 88e73db tety
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
