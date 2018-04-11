@@ -50,19 +50,17 @@ public class MainMenu extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("Play")) {
 			PreBattleScreen screen = new PreBattleScreen();
-			TowerDefense.towerdefense.add(screen);
-			TowerDefense.towerdefense.remove(0);
-			TowerDefense.towerdefense.dispose();
+			AnimalFarm.animalfarm.setContentPane(screen);
 			JFrame f = new JFrame();
 			f.add(screen);
-			TowerDefense.towerdefense = f;
-			TowerDefense.towerdefense.setTitle("TowerDefense");
-			TowerDefense.towerdefense.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			TowerDefense.towerdefense.dispose();
-			TowerDefense.towerdefense.setUndecorated(true);
-			TowerDefense.towerdefense.setExtendedState(JFrame.MAXIMIZED_BOTH);
-			TowerDefense.towerdefense.setVisible(true);
-			TowerDefense.towerdefense.repaint();
+			AnimalFarm.animalfarm = f;
+			AnimalFarm.animalfarm.setTitle("TowerDefense");
+			AnimalFarm.animalfarm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			AnimalFarm.animalfarm.dispose();
+			AnimalFarm.animalfarm.setUndecorated(true);
+			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			AnimalFarm.animalfarm.setVisible(true);
+			AnimalFarm.animalfarm.repaint();
 			
 		} else {
 			System.exit(0);
