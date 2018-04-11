@@ -1,9 +1,9 @@
 package enemies;
-public class Boss extends Enemy{
+public abstract class Boss extends Enemy{
 	public Boss(){
-		setHealth(50);
-		setSpeed(50);
-		setDamage(10);
-		setDrops(10);
+		setHealth(200);
+		setSpeed(200);
+		setDamage(40);
+		setDrops(100);
 	}
 }

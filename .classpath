@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="Back End"/>
 	<classpathentry kind="src" path="Front End"/>
 	<classpathentry kind="src" path="Testers"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
