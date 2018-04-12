@@ -11,13 +11,16 @@ import java.awt.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class MainGameScreen extends JPanel{
+public class MainGameScreen extends JPanel {
 
+	private static final long serialVersionUID = 1L;
 	JButton exit = new JButton("Exit");
-	
+	BufferedImage backg;
 	
 	MainGameScreen() {
-		
+		try {
+			backg = ImageIO.read(new File("pics/Background Image.jpg"));
+		} catch(Exception e){}
 	}
 	
 	
