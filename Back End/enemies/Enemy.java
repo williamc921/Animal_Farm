@@ -1,7 +1,7 @@
 package enemies;
 /**
  * Current enemies:
- * -1 sheep
+ * -1 sheep, -3 pig
  * @author parkertewell
  */
 public abstract class Enemy {
