@@ -6,12 +6,11 @@ public class AnimalFarm
 {
 	public AnimalFarm() {
 		animalfarm  = new JFrame();
-		animalfarm.setTitle("animalfarm");
+		animalfarm.setTitle("Animal Farm");
 		animalfarm.add(new MainMenu());
 		animalfarm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		AnimalFarm.animalfarm.dispose();
-		AnimalFarm.animalfarm.setUndecorated(true);
 		animalfarm.setVisible(true);
 	}
 	static Timer t = new Timer();

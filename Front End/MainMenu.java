@@ -20,7 +20,7 @@ public class MainMenu extends JPanel implements ActionListener{
 	MainMenu() {
 		this.setLayout(null);
 		
-		JLabel Title = new JLabel("Tower Defense");
+		JLabel Title = new JLabel("Animal Farm");
 		Title.setFont(new Font("Times New Roman", 1, 100));
 		Title.setSize(650 , 75);
 		Title.setLocation(800 - 300 , 50);
@@ -54,7 +54,7 @@ public class MainMenu extends JPanel implements ActionListener{
 			JFrame f = new JFrame();
 			f.add(screen);
 			AnimalFarm.animalfarm = f;
-			AnimalFarm.animalfarm.setTitle("TowerDefense");
+			AnimalFarm.animalfarm.setTitle("Animal Farm");
 			AnimalFarm.animalfarm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			AnimalFarm.animalfarm.setVisible(true);
