@@ -21,9 +21,9 @@ public class MainMenu extends JPanel implements ActionListener{
 		this.setLayout(null);
 		
 		JLabel Title = new JLabel("Animal Farm");
-		Title.setFont(new Font("Times New Roman", 1, 100));
-		Title.setSize(650 , 75);
-		Title.setLocation(800 - 300 , 50);
+		Title.setFont(new Font("Castellar", 1, 100));
+		Title.setSize(1000 , 100);
+		Title.setLocation(800 - 450 , 50);
 		this.add(Title);
 		
 		for(int i = 0; i < buttons.length; i ++) {
