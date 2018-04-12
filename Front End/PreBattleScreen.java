@@ -22,7 +22,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 		this.setLayout(null);
 		
 		JLabel Title = new JLabel("Pre-Battle");
-		Title.setFont(new Font("Times New Roman",1,100));
+		Title.setFont(new Font("Castellar",1,100));
 		Title.setSize(650, 75);
 		Title.setLocation(800 - 200 , 50);
 		this.add(Title);
@@ -44,34 +44,32 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("Start")) {
 			MainGameScreen screen = new MainGameScreen();
-			TowerDefense.towerdefense.add(screen);
-			TowerDefense.towerdefense.remove(0);
-			TowerDefense.towerdefense.dispose();
+			AnimalFarm.animalfarm.add(screen);
+			AnimalFarm.animalfarm.remove(0);
+			AnimalFarm.animalfarm.dispose();
 			JFrame f = new JFrame();
 			f.add(screen);
-			TowerDefense.towerdefense = f;
-			TowerDefense.towerdefense.setTitle("TowerDefense");
-			TowerDefense.towerdefense.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			TowerDefense.towerdefense.dispose();
-			TowerDefense.towerdefense.setUndecorated(true);
-			TowerDefense.towerdefense.setExtendedState(JFrame.MAXIMIZED_BOTH);
-			TowerDefense.towerdefense.setVisible(true);
-			TowerDefense.towerdefense.repaint();
+			AnimalFarm.animalfarm = f;
+			AnimalFarm.animalfarm.setTitle("Animal Farm");
+			AnimalFarm.animalfarm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			AnimalFarm.animalfarm.dispose();
+			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			AnimalFarm.animalfarm.setVisible(true);
+			AnimalFarm.animalfarm.repaint();
 		} else {
 			MainMenu screen = new MainMenu();
-			TowerDefense.towerdefense.add(screen);
-			TowerDefense.towerdefense.remove(0);
-			TowerDefense.towerdefense.dispose();
+			AnimalFarm.animalfarm.add(screen);
+			AnimalFarm.animalfarm.remove(0);
+			AnimalFarm.animalfarm.dispose();
 			JFrame f = new JFrame();
 			f.add(screen);
-			TowerDefense.towerdefense = f;
-			TowerDefense.towerdefense.setTitle("TowerDefense");
-			TowerDefense.towerdefense.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			TowerDefense.towerdefense.dispose();
-			TowerDefense.towerdefense.setUndecorated(true);
-			TowerDefense.towerdefense.setExtendedState(JFrame.MAXIMIZED_BOTH);
-			TowerDefense.towerdefense.setVisible(true);
-			TowerDefense.towerdefense.repaint();
+			AnimalFarm.animalfarm = f;
+			AnimalFarm.animalfarm.setTitle("Animal Farm");
+			AnimalFarm.animalfarm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			AnimalFarm.animalfarm.dispose();
+			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			AnimalFarm.animalfarm.setVisible(true);
+			AnimalFarm.animalfarm.repaint();
 		}
 		
 	}

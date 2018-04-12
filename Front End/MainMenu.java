@@ -20,7 +20,7 @@ public class MainMenu extends JPanel implements ActionListener{
 	MainMenu() {
 		this.setLayout(null);
 		
-		JLabel Title = new JLabel("Tower Defense");
+		JLabel Title = new JLabel("Animal Farm");
 		Title.setFont(new Font("Times New Roman", 1, 100));
 		Title.setSize(650 , 75);
 		Title.setLocation(800 - 300 , 50);
@@ -50,19 +50,15 @@ public class MainMenu extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("Play")) {
 			PreBattleScreen screen = new PreBattleScreen();
-			TowerDefense.towerdefense.add(screen);
-			TowerDefense.towerdefense.remove(0);
-			TowerDefense.towerdefense.dispose();
+			AnimalFarm.animalfarm.setContentPane(screen);
 			JFrame f = new JFrame();
 			f.add(screen);
-			TowerDefense.towerdefense = f;
-			TowerDefense.towerdefense.setTitle("TowerDefense");
-			TowerDefense.towerdefense.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			TowerDefense.towerdefense.dispose();
-			TowerDefense.towerdefense.setUndecorated(true);
-			TowerDefense.towerdefense.setExtendedState(JFrame.MAXIMIZED_BOTH);
-			TowerDefense.towerdefense.setVisible(true);
-			TowerDefense.towerdefense.repaint();
+			AnimalFarm.animalfarm = f;
+			AnimalFarm.animalfarm.setTitle("Animal Farm");
+			AnimalFarm.animalfarm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			AnimalFarm.animalfarm.setVisible(true);
+			AnimalFarm.animalfarm.repaint();
 			
 		} else {
 			System.exit(0);
