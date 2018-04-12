@@ -52,6 +52,8 @@ public class MainMenu extends JPanel implements ActionListener{
 			PreBattleScreen screen = new PreBattleScreen();
 			AnimalFarm.animalfarm.setContentPane(screen);
 			JFrame f = new JFrame();
+			AnimalFarm.animalfarm.remove(0);
+			AnimalFarm.animalfarm.dispose();
 			f.add(screen);
 			AnimalFarm.animalfarm = f;
 			AnimalFarm.animalfarm.setTitle("Animal Farm");

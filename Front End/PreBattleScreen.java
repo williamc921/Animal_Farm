@@ -22,9 +22,9 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 		this.setLayout(null);
 		
 		JLabel Title = new JLabel("Pre-Battle");
-		Title.setFont(new Font("Castellar",1,100));
-		Title.setSize(650, 75);
-		Title.setLocation(800 - 200 , 50);
+		Title.setFont(new Font("Castellar",1, 100));
+		Title.setSize(800, 100);
+		Title.setLocation(800 - 350 , 70);
 		this.add(Title);
 		
 		for(int i = 0; i < buttons.length; i ++) {
