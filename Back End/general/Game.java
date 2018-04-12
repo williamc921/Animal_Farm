@@ -10,8 +10,7 @@ public class Game implements ActionListener{
 	//enemies stop one plot in front on the towers and attack them with the same speed
 	private int enemies, towers;
 	public Game(int waves){
-		Timer time = new Timer(100,this);
-		time.start();
+		
 	}
 	public void actionPerformed(ActionEvent e){
 		

@@ -1,5 +1,5 @@
 package enemies;
-public class Tank extends Enemy{
+public abstract class Tank extends Enemy{
 	public Tank(){
 		setHealth(100);
 		setSpeed(20);
