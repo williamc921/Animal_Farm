@@ -2,17 +2,24 @@ package enemies;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-
 import javax.swing.Timer;
+import general.Grid;
 /**
  * Current enemies:
  * -1 sheep, -3 pig
  * @author parkertewell
  */
 public abstract class Enemy implements ActionListener {
+	private Grid grid;
 	private BufferedImage image;
 	private Timer speed;
 	private int health, damage, drops, gridVal;
+	public Enemy(Grid newGrid){
+		setGrid(newGrid);
+	}
+	public Grid getGrid(){
+		return grid;
+	}
 	public BufferedImage getImage(){
 		return image;
 	}
@@ -54,6 +61,9 @@ public abstract class Enemy implements ActionListener {
 	}
 	public void setImage(BufferedImage newImage){
 		image = newImage;
+	}
+	public void setGrid(Grid newGrid){
+		grid = newGrid;
 	}
 	public void actionPerformed(ActionEvent e) {
 		
