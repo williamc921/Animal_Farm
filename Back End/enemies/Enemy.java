@@ -1,11 +1,16 @@
 package enemies;
+import java.awt.image.BufferedImage;
 /**
  * Current enemies:
- * -1 sheep
+ * -1 sheep, -3 pig
  * @author parkertewell
  */
 public abstract class Enemy {
+	private BufferedImage image;
 	private int health, speed, damage, drops, gridVal;
+	public BufferedImage getImage(){
+		return image;
+	}
 	public int getHealth(){
 		return health;
 	}
@@ -41,5 +46,8 @@ public abstract class Enemy {
 	 */
 	public void setSpeed(int newVal){
 		speed = newVal;
+	}
+	public void setImage(BufferedImage newImage){
+		image = newImage;
 	}
 }
