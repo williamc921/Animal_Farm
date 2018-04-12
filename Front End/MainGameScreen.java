@@ -11,13 +11,25 @@ import java.awt.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class MainGameScreen extends JPanel{
-
-	JButton exit = new JButton("Exit");
+public class MainGameScreen extends JPanel {
 	
+	JButton exit = new JButton("Exit");
+	BufferedImage backg;
 	
 	MainGameScreen() {
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		try {
+			backg = ImageIO.read(new File("pics/Background Image.jpg"));
+		} catch(Exception e){}
 	}
 	
 	
