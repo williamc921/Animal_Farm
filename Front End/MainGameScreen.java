@@ -18,9 +18,9 @@ public class MainGameScreen extends JPanel {
 	BufferedImage backg;
 	
 	MainGameScreen() {
-		try {
-			backg = ImageIO.read(new File("pics/Background Image.jpg"));
-		} catch(Exception e){}
+		try{
+			backg= ImageIO.read(new File("pics/Background Image.jpg"));
+		}catch(Exception E){}
 	}
 	
 	
