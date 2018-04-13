@@ -13,7 +13,7 @@ public abstract class Enemy implements ActionListener {
 	private Grid grid;
 	private BufferedImage image;
 	private Timer speed;
-	private int health, damage, drops, gridVal;
+	private int health, damage, drops, gridVal, x, y;
 	public Enemy(Grid newGrid){
 		setGrid(newGrid);
 	}
@@ -66,6 +66,6 @@ public abstract class Enemy implements ActionListener {
 		grid = newGrid;
 	}
 	public void actionPerformed(ActionEvent e) {
-		
+		if(grid.getStatus(row, column) == 0)
 	}
 }
