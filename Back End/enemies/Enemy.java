@@ -14,9 +14,6 @@ public abstract class Enemy implements ActionListener {
 	private BufferedImage image;
 	private Timer speed;
 	private int health, damage, drops, gridVal, row, column;
-	public Enemy(){
-		
-	}
 	public BufferedImage getImage(){
 		return image;
 	}
