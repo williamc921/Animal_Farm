@@ -40,9 +40,22 @@ public class Grid {
 	 */
 	public void sendWave(int regular, int fast, int tank){
 		Random rand = new Random();
-		while(0 < regular+fast+tank){
-			int type = (rand.nextInt(3) + 1) * -1, row = (rand.nextInt(5));
-			
+		int total = regular+fast+tank;
+		for(int i = 0; i < total; i++){
+			boolean statusSet = false;
+			while(!statusSet){
+				int type = (rand.nextInt(3) + 1) * -1;
+				if((type == -1 && regular > 0) || (type == -2 && fast > 0) || (type == -3 && tank > 0)){
+					setStatus(type,i,9);
+					statusSet = true;
+					if(type == -1)
+						regular--;
+					else if(type == -2)
+						fast--;
+					else
+						tank--;
+				}
+			}
 		}
 	}
 	/**
