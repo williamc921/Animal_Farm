@@ -1,8 +1,7 @@
 package enemies;
 import general.Grid;
 public abstract class Boss extends Enemy{
-	public Boss(Grid newGrid){
-		super(newGrid);
+	public Boss(){
 		setHealth(200);
 		setSpeed(200);
 		setDamage(40);

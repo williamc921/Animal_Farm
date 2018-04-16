@@ -1,8 +1,7 @@
 package enemies;
 import general.Grid;
 public abstract class Fast extends Enemy{
-	public Fast(Grid newGrid){
-		super(newGrid);
+	public Fast(){
 		setHealth(50);
 		setSpeed(50);
 		setDamage(10);
