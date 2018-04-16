@@ -38,21 +38,11 @@ public class Grid {
 	 * @param regular Amount of regular enemies
 	 * @param fast Amount of fast enemies
 	 */
-	public void sendWave(int regular, int fast){
+	public void sendWave(int regular, int fast, int tank){
 		Random rand = new Random();
-		while(0 < regular+fast){
+		while(0 < regular+fast+tank){
 			int type = (rand.nextInt(3) + 1) * -1, row = (rand.nextInt(5));
-			if(type == -1 && regular == 0)
-				type = -2;
-			else if(type == -2 && fast == 0)
-				type = -1;
-			if(getStatus(row,9) == EMPTY){
-				setStatus(type, row, 9);
-				if(type == -1)
-					regular--;
-				else
-					fast--;
-			}
+			
 		}
 	}
 	/**
@@ -63,6 +53,6 @@ public class Grid {
 	public void sendEnemy(int type){
 		Random rand = new Random();
 		int row = (rand.nextInt(5));
-			setStatus(type, row, 9);
+		setStatus(type, row, 9);
 	}
 }

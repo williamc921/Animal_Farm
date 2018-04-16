@@ -1,3 +1,4 @@
+import general.Game;
 import general.Grid;
 import general.Player;
 import towers.Peashooter;
@@ -10,11 +11,11 @@ public class GridTester {
 		testPlayer.purchaseTower(new Peashooter(), 0, 0);
 		displayGrid(testPlayer);
 		System.out.println("Sending a wave");
-		testPlayer.getGrid().sendWave(2, 3);
+		Game.grid.sendWave(2, 2, 1);
 		displayGrid(testPlayer);
 	}
 	private static void displayGrid(Player testPlayer){
-		Grid test = testPlayer.getGrid();
+		Grid test = Game.grid;
 		for(int i = 0; i < 5; i++){
 			for(int j = 0; j < 10; j++)
 				System.out.print(test.getStatus(i, j) + " ");
