@@ -35,9 +35,18 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			this.add(buttons[i]);
 		}
 		try{
-			backg= ImageIO.read(new File("pics/Background Image.jpg"));
+			backg= ImageIO.read(new File("pics/Grass Image.jpg"));
 		}catch(Exception E){}
 	
+	}
+	
+	public void paint(Graphics g){
+		g.drawImage(backg, 0, 0, 1600, 900, null);
+		for(int i=0;i<this.getComponentCount();i++){
+			g.translate(this.getComponent(i).getX(), this.getComponent(i).getY());
+			this.getComponent(i).paint(g);
+			g.translate(-this.getComponent(i).getX(), -this.getComponent(i).getY());
+		}
 	}
 	
 	public void actionPerformed(ActionEvent e) {
