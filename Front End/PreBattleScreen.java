@@ -17,6 +17,9 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	private JButton start = new JButton("Start"), exit = new JButton("Back");
 	private JButton[] buttons = new JButton[] {start, exit};
 	BufferedImage backg;
+	JButton[] towers = new JButton[8];
+	JLabel[] towerNames = new JLabel[8];
+	
 	
 	PreBattleScreen() {
 		this.setLayout(null);
@@ -34,6 +37,24 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			buttons[i].setLocation((int) (800 + 200 * (i -.5)) - 50, 760);
 			this.add(buttons[i]);
 		}
+		
+		for(int i = 0; i < towerNames.length; i ++) {
+			towerNames[i] = new JLabel("Tower " + 1+i);
+			towerNames[i].setSize(100,100);
+			towerNames[i].setFont(new Font("Castellar", 1 , 10));
+			towerNames[i].setLocation((int) (400 + 200 * (i -.5)) - 100 , 500);
+			this.add(towerNames[i]);
+		}
+		
+		for(int i = 0; i < towers.length; i ++) {
+			towers[i].addActionListener(this);
+			towers[i].setSize(100, 100);
+			towers[i].setActionCommand(towerNames[i].getText());
+			towers[i].setLocation((int) (400 + 200 * (i -.5)) - 100 , 400); 
+			this.add(towers[i]);
+		}
+//		
+		
 		try{
 			backg= ImageIO.read(new File("pics/Pre Battle Screen.jpg"));
 		}catch(Exception E){}
