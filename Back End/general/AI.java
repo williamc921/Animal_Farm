@@ -1,10 +1,8 @@
 package general;
-
 import java.awt.image.BufferedImage;
-
 public class AI {
-	private int health, damage, gridVal, row, column;
-	private BufferedImage image;
+	protected int health, damage, gridVal, row, column;
+	protected BufferedImage image;
 	public BufferedImage getImage(){
 		return image;
 	}

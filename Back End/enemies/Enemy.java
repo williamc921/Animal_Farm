@@ -3,7 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.Timer;
-
 import general.AI;
 import general.Game;
 /**
@@ -14,7 +13,7 @@ import general.Game;
 public abstract class Enemy extends AI implements ActionListener {
 	//private Grid grid;
 	private Timer speed;
-	private int damage, drops;
+	private int drops;
 	public int getDrops(){
 		return drops;
 	}
@@ -34,7 +33,7 @@ public abstract class Enemy extends AI implements ActionListener {
 		speed = new Timer(newVal, this);
 	}
 	public void attack(){
-
+		
 	}
 	/**
 	 * Tries to move enemy to next tile,

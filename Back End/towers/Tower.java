@@ -1,10 +1,11 @@
 package towers;
+import general.AI;
 /**
  * Current towers:
  * 1 peashooter
  * @author parkertewell
  */
-public abstract class Tower {
+public abstract class Tower extends AI{
 	private int price;
 	public int getPrice(){
 		return price;

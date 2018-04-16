@@ -33,7 +33,7 @@ public class Grid {
 	public void setStatus(Object update, int row, int column){
 		grid[row][column] = update;
 	}
-	public Object getStatus(int row, int column){
+	public AI getStatus(int row, int column){
 		return grid[row][column];
 	}
 	/**
