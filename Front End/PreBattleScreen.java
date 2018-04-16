@@ -35,7 +35,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			this.add(buttons[i]);
 		}
 		try{
-			backg= ImageIO.read(new File("pics/Grass Image.jpg"));
+			backg= ImageIO.read(new File("pics/Pre Battle Screen.jpg"));
 		}catch(Exception E){}
 	
 	}
