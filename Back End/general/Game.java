@@ -1,6 +1,8 @@
 package general;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import javax.swing.Timer;
 public class Game{
 	//Multi-threading?
@@ -11,8 +13,8 @@ public class Game{
 	private int enemies, towers;
 	public static Grid grid = new Grid();
 	public static Player player = new Player();
-	public Game(int waves){
-		//Send wave
-		//update board
+	public Game(int waves) throws IOException{
+		grid.sendWave(5, 0, 0);
+		
 	}
 }

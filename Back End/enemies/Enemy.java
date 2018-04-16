@@ -3,29 +3,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.Timer;
+
+import general.AI;
 import general.Game;
 /**
  * Current enemies:
  * -1 sheep, -3 pig
  * @author parkertewell
  */
-public abstract class Enemy implements ActionListener {
+public abstract class Enemy extends AI implements ActionListener {
 	//private Grid grid;
-	private BufferedImage image;
 	private Timer speed;
-	private int health, damage, drops, gridVal, row, column;
-	public BufferedImage getImage(){
-		return image;
-	}
-	public int getHealth(){
-		return health;
-	}
-	public int getDamage(){
-		return damage;
-	}
-	public int getGridVal(){
-		return gridVal;
-	}
+	private int damage, drops;
 	public int getDrops(){
 		return drops;
 	}
@@ -35,15 +24,6 @@ public abstract class Enemy implements ActionListener {
 	public Timer getSpeed(){
 		return speed;
 	}
-	public void setHealth(int newVal){
-		health = newVal;
-	}
-	public void setDamage(int newVal){
-		damage = newVal;
-	}
-	public void setGridVal(int newVal){
-		gridVal = newVal;
-	}
 	public void setDrops(int newVal){
 		drops = newVal;
 	}
@@ -52,9 +32,6 @@ public abstract class Enemy implements ActionListener {
 	 */
 	public void setSpeed(int newVal){
 		speed = new Timer(newVal, this);
-	}
-	public void setImage(BufferedImage newImage){
-		image = newImage;
 	}
 	public void attack(){
 
