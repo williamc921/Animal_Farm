@@ -7,7 +7,7 @@ import towers.Tower;
 public class Player {
 	private int health = 10, money = 100;
 	private Tower[] towers = new Tower[5];
-	private Grid grid = new Grid();
+	private Grid grid;
 	public Tower getTower(int num){
 		return towers[num];
 	}

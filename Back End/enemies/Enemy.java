@@ -13,7 +13,7 @@ public abstract class Enemy implements ActionListener {
 	private Grid grid;
 	private BufferedImage image;
 	private Timer speed;
-	private int health, damage, drops, gridVal, x, y;
+	private int health, damage, drops, gridVal, row, column;
 	public Enemy(Grid newGrid){
 		setGrid(newGrid);
 	}
@@ -65,7 +65,19 @@ public abstract class Enemy implements ActionListener {
 	public void setGrid(Grid newGrid){
 		grid = newGrid;
 	}
+	/**
+	 * Tries to move enemy to next tile,
+	 * if the tile is a tower attack
+	 * if the tile is blocked by another enemy do nothing
+	 */
 	public void actionPerformed(ActionEvent e) {
-		if(grid.getStatus(row, column) == 0)
+		if(grid.getStatus(row, column) == 0){
+			column++;
+			grid.setStatus(gridVal, row, column);
+		}else if(grid.getStatus(row, column+1) > 0){
+			//attack tower
+		}else{
+			
+		}
 	}
 }
