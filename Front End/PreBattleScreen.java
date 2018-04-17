@@ -20,6 +20,9 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	JButton[] towers = new JButton[8];
 	JLabel[] towerNames = new JLabel[8];
 	Color[] colors = new Color[] {Color.red, Color.white, Color.black, Color.blue, Color.green, Color.yellow, Color.pink, Color.cyan};	
+	JButton[] chosenTowers = new JButton[6];
+	JLabel[] chosenLabels = new JLabel[6];
+	
 	
 	PreBattleScreen() {
 		this.setLayout(null);
@@ -55,6 +58,18 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			towers[i].addActionListener(this);
 			towers[i].setActionCommand(towerNames[i].getText());
 			this.add(towers[i]);
+		}
+		
+		for(int i = 0; i < chosenLabels.length; i ++) {
+			chosenLabels[i] = new JLabel("Chosen Tower " + (i+1)); 
+			chosenLabels[i].setSize(100,100);
+		}
+		
+		for(int i = 0; i < chosenTowers.length; i ++) {
+			chosenTowers[i] = new JButton();
+			chosenTowers[i].addActionListener(this);
+			chosenTowers[i].setActionCommand(chosenLabels[i].getText());
+			chosenTowers[i].setSize(100, 100);
 		}
 		
 		try{
@@ -101,8 +116,23 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			AnimalFarm.animalfarm.setVisible(true);
 			AnimalFarm.animalfarm.repaint();
+		} else if(e.getActionCommand().equals("Tower 1")) {
+
+		} else if(e.getActionCommand().equals("Tower 1")) {
+			
+		} else if(e.getActionCommand().equals("Tower 1")) {
+	
+		} else if(e.getActionCommand().equals("Tower 1")) {
+	
+		} else if(e.getActionCommand().equals("Tower 1")) {
+	
+		} else if(e.getActionCommand().equals("Tower 1")) {
+	
+		} else if(e.getActionCommand().equals("Tower 1")) {
+	
+		} else{
+	
 		}
-		
 	}
 
 }
