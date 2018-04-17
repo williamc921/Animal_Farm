@@ -50,7 +50,7 @@ public abstract class Enemy extends AI implements ActionListener {
 		}else if(Game.grid.getStatus(row, column+1) == null){
 			column++;
 			Game.grid.setStatus(this, row, column);
-		}else if(Game.grid.getStatus(row, column+1) == new Tower()){
+		}else if(Game.grid.getStatus(row, column+1) instanceof Tower){
 			attack();
 		}
 	}

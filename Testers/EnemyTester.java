@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-import enemies.Sheep;
+import enemies.Regular.Sheep;
 import general.Game;
 import general.Grid;
 import general.Player;

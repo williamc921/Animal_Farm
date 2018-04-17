@@ -3,6 +3,7 @@ import general.Game;
 import general.Grid;
 import general.Player;
 import towers.Peashooter;
+import towers.Tower;
 public class GridTester {
 	public static void main(String args[]) throws IOException{
 		Player testPlayer = new Player();
