@@ -5,5 +5,6 @@ public abstract class Regular extends Enemy{
 		setSpeed(500);
 		setDamage(20);
 		setDrops(10);
+		speed.start();
 	}
 }
