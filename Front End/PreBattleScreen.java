@@ -22,6 +22,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	Color[] colors = new Color[] {Color.red, Color.white, Color.black, Color.blue, Color.green, Color.yellow, Color.pink, Color.cyan};	
 	JButton[] chosenTowers = new JButton[6];
 	JLabel[] chosenLabels = new JLabel[6];
+	int choseTowers = 0;
 	
 	
 	PreBattleScreen() {
@@ -60,18 +61,19 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			this.add(towers[i]);
 		}
 		
-		for(int i = 0; i < chosenLabels.length; i ++) {
-			chosenLabels[i] = new JLabel("Chosen Tower " + (i+1)); 
-			chosenLabels[i].setSize(100,100);
-		}
-		
-		for(int i = 0; i < chosenTowers.length; i ++) {
-			chosenTowers[i] = new JButton();
-			chosenTowers[i].addActionListener(this);
-			chosenTowers[i].setActionCommand(chosenLabels[i].getText());
-			chosenTowers[i].setSize(100, 100);
-		}
-		
+//		for(int i = 0; i < chosenLabels.length; i ++) {
+//			chosenLabels[i] = new JLabel("Chosen Tower " + (i+1)); 
+//			chosenLabels[i].setSize(100,100);
+//		}
+//		
+//		for(int i = 0; i < chosenTowers.length; i ++) {
+//			chosenTowers[i] = new JButton();
+//			chosenTowers[i].addActionListener(this);
+//			chosenTowers[i].setActionCommand(chosenLabels[i].getText());
+//			chosenTowers[i].setSize(100, 100);
+//			towers[i].setLocation((int) (400 + 200 * (i -.5)) - 250 , 550);
+//		}
+//		
 		try{
 			backg= ImageIO.read(new File("pics/Pre Battle Screen.jpg"));
 		}catch(Exception E){}
@@ -116,23 +118,8 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			AnimalFarm.animalfarm.setVisible(true);
 			AnimalFarm.animalfarm.repaint();
-		} else if(e.getActionCommand().equals("Tower 1")) {
-
-		} else if(e.getActionCommand().equals("Tower 1")) {
-			
-		} else if(e.getActionCommand().equals("Tower 1")) {
-	
-		} else if(e.getActionCommand().equals("Tower 1")) {
-	
-		} else if(e.getActionCommand().equals("Tower 1")) {
-	
-		} else if(e.getActionCommand().equals("Tower 1")) {
-	
-		} else if(e.getActionCommand().equals("Tower 1")) {
-	
-		} else{
-	
 		}
+	
 	}
 
 }
