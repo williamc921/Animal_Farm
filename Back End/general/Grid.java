@@ -1,7 +1,6 @@
 package general;
 import java.io.IOException;
 import java.util.Random;
-
 import enemies.Chicken;
 import enemies.Enemy;
 import enemies.Pig;
@@ -19,9 +18,9 @@ public class Grid {
 	public static final int PEASHOOTER = 1;
 	public static final int SHEEP = -1, COW = -1, PIG = -1, 
 			WOLF = -2, CHICKEN = -2, HORSE = -2;
-	private Object[][] grid;
+	private AI[][] grid;
 	public Grid(){
-		grid = new Object[5][10];
+		grid = new AI[5][10];
 	}
 	/**
 	 * Use to place towers and boss
@@ -30,10 +29,10 @@ public class Grid {
 	 * @param row
 	 * @param column
 	 */
-	public void setStatus(Object update, int row, int column){
+	public void setStatus(AI update, int row, int column){
 		grid[row][column] = update;
 	}
-	public AI getStatus(int row, int column){
+	public Object getStatus(int row, int column){
 		return grid[row][column];
 	}
 	/**
@@ -53,7 +52,8 @@ public class Grid {
 			boolean statusSet = false;
 			while(!statusSet){
 				Enemy randEnemy = randomEnemy();
-				if((randEnemy.getGridVal() == -1 && regular > 0) || (randEnemy.getGridVal() == -2 && fast > 0) 
+				if((randEnemy.getGridVal() == -1 && regular > 0) ||
+						(randEnemy.getGridVal() == -2 && fast > 0) 
 						|| (randEnemy.getGridVal() == -3 && tank > 0)){
 					setStatus(randEnemy,i,9);
 					statusSet = true;
@@ -84,7 +84,7 @@ public class Grid {
 	 * Doesn't check if placement area is clear
 	 * @param type
 	 */
-	public void sendEnemy(int type){
+	public void sendEnemy(AI type){
 		Random rand = new Random();
 		int row = (rand.nextInt(5));
 		setStatus(type, row, 9);

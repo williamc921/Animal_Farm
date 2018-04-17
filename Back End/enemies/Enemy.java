@@ -11,7 +11,6 @@ import general.Game;
  * @author parkertewell
  */
 public abstract class Enemy extends AI implements ActionListener {
-	//private Grid grid;
 	private Timer speed;
 	private int drops;
 	public int getDrops(){

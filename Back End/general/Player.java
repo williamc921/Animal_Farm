@@ -23,9 +23,9 @@ public class Player {
 		money = newVal;
 	}
 	public void purchaseTower(Tower tower, int row, int column){
-		if(Game.grid.getStatus(row, column) == Grid.EMPTY && getMoney() >= tower.getPrice()){
+		if(Game.grid.getStatus(row, column) == null && getMoney() >= tower.getPrice()){
 			setMoney(getMoney() - tower.getPrice());
-			Game.grid.setStatus(tower.getGridVal(), row, column);
+			Game.grid.setStatus(tower, row, column);
 		}
 	}
 }

@@ -10,7 +10,6 @@ public class Game{
 	//1600x900
 	//make sure the enemies dont march thru the towers
 	//enemies stop one plot in front on the towers and attack them with the same speed
-	private int enemies, towers;
 	public static Grid grid = new Grid();
 	public static Player player = new Player();
 	public Game(int waves) throws IOException{

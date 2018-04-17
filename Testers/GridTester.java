@@ -1,9 +1,10 @@
+import java.io.IOException;
 import general.Game;
 import general.Grid;
 import general.Player;
 import towers.Peashooter;
 public class GridTester {
-	public static void main(String args[]){
+	public static void main(String args[]) throws IOException{
 		Player testPlayer = new Player();
 		System.out.println("Initial");
 		displayGrid(testPlayer);
