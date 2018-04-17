@@ -6,6 +6,7 @@ import general.Grid;
 public class Pig extends Tank{
 	public Pig() throws IOException{
 		setGridVal(-3);
+		setName("Pig_");
 		//setImage(ImageIO.read(new File("pics/Pig.jfif")));
 	}
 }

@@ -12,7 +12,10 @@ public class EnemyTester {
 		Grid test = Game.grid;
 		for(int i = 0; i < 5; i++){
 			for(int j = 0; j < 10; j++)
-				System.out.print(test.getStatus(i, j) + " ");
+				if(test.getStatus(i, j)!=null)
+					System.out.print(test.getStatus(i, j).getName() + " ");
+				else
+					System.out.print(test.getStatus(i, j) + " ");
 			System.out.println();
 		}
 	}

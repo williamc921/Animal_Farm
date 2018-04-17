@@ -32,7 +32,7 @@ public class Grid {
 	public void setStatus(AI update, int row, int column){
 		grid[row][column] = update;
 	}
-	public Object getStatus(int row, int column){
+	public AI getStatus(int row, int column){
 		return grid[row][column];
 	}
 	/**
@@ -44,28 +44,37 @@ public class Grid {
 	 * @param regular Amount of regular enemies
 	 * @param fast Amount of fast enemies
 	 * @param tank Amount of tank enemies
-	 * @throws IOException 
+	 * @throws IOException Thrown if retreving an enemies' image fails
 	 */
 	public void sendWave(int regular, int fast, int tank) throws IOException{
-		int total = regular+fast+tank;
-		for(int i = 0; i < total; i++){
-			boolean statusSet = false;
-			while(!statusSet){
-				Enemy randEnemy = randomEnemy();
-				if((randEnemy.getGridVal() == -1 && regular > 0) ||
-						(randEnemy.getGridVal() == -2 && fast > 0) 
-						|| (randEnemy.getGridVal() == -3 && tank > 0)){
-					setStatus(randEnemy,i,9);
-					statusSet = true;
-					if(randEnemy.getGridVal() == -1)
-						regular--;
-					else if(randEnemy.getGridVal() == -2)
-						fast--;
-					else
-						tank--;
+		if(columnClear(9)){
+			int total = regular+fast+tank;
+			for(int i = 0; i < total; i++){
+				boolean statusSet = false;
+				while(!statusSet){
+					Enemy randEnemy = randomEnemy();
+					if((randEnemy.getGridVal() == -1 && regular > 0) ||
+							(randEnemy.getGridVal() == -2 && fast > 0) 
+							|| (randEnemy.getGridVal() == -3 && tank > 0)){
+						setStatus(randEnemy,i,9);
+						statusSet = true;
+						if(randEnemy.getGridVal() == -1)
+							regular--;
+						else if(randEnemy.getGridVal() == -2)
+							fast--;
+						else
+							tank--;
+					}
 				}
 			}
 		}
+	}
+	public boolean columnClear(int column){
+		boolean clear = true;
+		for(int i = 0; i < 5; i++)
+			if(getStatus(i,column)!=null)
+				clear = false;
+		return clear;
 	}
 	public Enemy randomEnemy() throws IOException{
 		Random rand = new Random();
@@ -88,5 +97,16 @@ public class Grid {
 		Random rand = new Random();
 		int row = (rand.nextInt(5));
 		setStatus(type, row, 9);
+	}
+	public static void displayGrid(){
+		Grid test = Game.grid;
+		for(int i = 0; i < 5; i++){
+			for(int j = 0; j < 10; j++)
+				if(test.getStatus(i, j)!=null)
+					System.out.print(test.getStatus(i, j).getName() + " ");
+				else
+					System.out.print(test.getStatus(i, j) + " ");
+			System.out.println();
+		}
 	}
 }

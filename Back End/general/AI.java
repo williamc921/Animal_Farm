@@ -1,8 +1,12 @@
 package general;
 import java.awt.image.BufferedImage;
 public class AI {
+	protected String name;
 	protected int health, damage, gridVal, row, column;
 	protected BufferedImage image;
+	public String getName(){
+		return name;
+	}
 	public BufferedImage getImage(){
 		return image;
 	}
@@ -26,5 +30,8 @@ public class AI {
 	}
 	public void setGridVal(int newVal){
 		gridVal = newVal;
+	}
+	public void setName(String newVal){
+		name = newVal;
 	}
 }

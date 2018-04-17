@@ -6,21 +6,15 @@ import towers.Peashooter;
 public class GridTester {
 	public static void main(String args[]) throws IOException{
 		Player testPlayer = new Player();
-		System.out.println("Initial");
-		displayGrid(testPlayer);
+		Grid testGrid = new Grid();
+		Game testGame = new Game(1, testGrid, testPlayer);
+		System.out.println("Initial wave");
+		testGame.grid.displayGrid();
 		System.out.println("Placing a tower");
 		testPlayer.purchaseTower(new Peashooter(), 0, 0);
-		displayGrid(testPlayer);
-		System.out.println("Sending a wave");
+		Game.grid.displayGrid();
+		System.out.println("Sending an overlapping wave");
 		Game.grid.sendWave(2, 2, 1);
-		displayGrid(testPlayer);
-	}
-	private static void displayGrid(Player testPlayer){
-		Grid test = Game.grid;
-		for(int i = 0; i < 5; i++){
-			for(int j = 0; j < 10; j++)
-				System.out.print(test.getStatus(i, j) + " ");
-			System.out.println();
-		}
+		Game.grid.displayGrid();
 	}
 }
