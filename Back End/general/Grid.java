@@ -2,10 +2,10 @@ package general;
 import java.io.IOException;
 import java.util.Random;
 
+import enemies.Chicken;
 import enemies.Enemy;
-import enemies.Fast.Chicken;
-import enemies.Regular.Sheep;
-import enemies.Tank.Pig;
+import enemies.Pig;
+import enemies.Sheep;
 /**
  * @author parkertewell
  * Game

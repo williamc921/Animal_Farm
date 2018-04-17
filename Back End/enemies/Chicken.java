@@ -1,4 +1,4 @@
-package enemies.Fast;
+package enemies;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
