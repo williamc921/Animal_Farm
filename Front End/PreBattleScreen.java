@@ -19,7 +19,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	BufferedImage backg;
 	JButton[] towers = new JButton[8];
 	JLabel[] towerNames = new JLabel[8];
-	
+	Color[] colors = new Color[] {Color.red, Color.white, Color.black, Color.blue, Color.green, Color.yellow, Color.pink, Color.cyan};	
 	
 	PreBattleScreen() {
 		this.setLayout(null);
@@ -39,21 +39,23 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 		}
 		
 		for(int i = 0; i < towerNames.length; i ++) {
-			towerNames[i] = new JLabel("Tower " + 1+i);
+			towerNames[i] = new JLabel("Tower " + (1+i));
 			towerNames[i].setSize(100,100);
 			towerNames[i].setFont(new Font("Castellar", 1 , 10));
-			towerNames[i].setLocation((int) (400 + 200 * (i -.5)) - 100 , 500);
+			towerNames[i].setForeground(Color.white);
+			towerNames[i].setLocation((int) (400 + 200 * (i -.5)) - 225 , 350);
 			this.add(towerNames[i]);
 		}
 		
-		for(int i = 0; i < towers.length; i ++) {
+		for(int i = 0; i < towers.length; i++ ) {
+			towers[i] = new JButton();
+			towers[i].setBackground(colors[i]);
+			towers[i].setSize(100,100);
+			towers[i].setLocation((int) (400 + 200 * (i -.5)) - 250 , 250);
 			towers[i].addActionListener(this);
-			towers[i].setSize(100, 100);
 			towers[i].setActionCommand(towerNames[i].getText());
-			towers[i].setLocation((int) (400 + 200 * (i -.5)) - 100 , 400); 
 			this.add(towers[i]);
 		}
-//		
 		
 		try{
 			backg= ImageIO.read(new File("pics/Pre Battle Screen.jpg"));
@@ -85,7 +87,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			AnimalFarm.animalfarm.setVisible(true);
 			AnimalFarm.animalfarm.repaint();
-		} else {
+		} else if(e.getActionCommand().equals("Back")){
 			MainMenu screen = new MainMenu();
 			AnimalFarm.animalfarm.add(screen);
 			AnimalFarm.animalfarm.remove(0);
