@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.Timer;
 import general.AI;
 import general.Game;
+import towers.Tower;
 /**
  * Current enemies:
  * -1 sheep, -3 pig
@@ -46,11 +47,10 @@ public abstract class Enemy extends AI implements ActionListener {
 		 */
 		if(column == 0){
 			Game.player.setHealth(Game.player.getHealth()-1);
-			setHealth(0);
-		}else if(Game.grid.getStatus(row, column+1) == 0){
+		}else if(Game.grid.getStatus(row, column+1) == null){
 			column++;
-			Game.grid.setStatus(gridVal, row, column);
-		}else if(Game.grid.getStatus(row, column+1) > 0){
+			Game.grid.setStatus(this, row, column);
+		}else if(Game.grid.getStatus(row, column+1) == new Tower()){
 			attack();
 		}
 	}

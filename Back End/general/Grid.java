@@ -98,7 +98,7 @@ public class Grid {
 		int row = (rand.nextInt(5));
 		setStatus(type, row, 9);
 	}
-	public static void displayGrid(){
+	public void displayGrid(){
 		Grid test = Game.grid;
 		for(int i = 0; i < 5; i++){
 			for(int j = 0; j < 10; j++)

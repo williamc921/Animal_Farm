@@ -12,9 +12,9 @@ public class GridTester {
 		testGame.grid.displayGrid();
 		System.out.println("Placing a tower");
 		testPlayer.purchaseTower(new Peashooter(), 0, 0);
-		Game.grid.displayGrid();
+		testGame.grid.displayGrid();
 		System.out.println("Sending an overlapping wave");
-		Game.grid.sendWave(2, 2, 1);
-		Game.grid.displayGrid();
+		testGame.grid.sendWave(2, 2, 1);
+		testGame.grid.displayGrid();
 	}
 }
