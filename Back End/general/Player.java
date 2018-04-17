@@ -22,10 +22,10 @@ public class Player {
 	public void setMoney(int newVal){
 		money = newVal;
 	}
-	public void purchaseTower(Tower tower, int row, int column){
-		if(Game.grid.getStatus(row, column) == null && getMoney() >= tower.getPrice()){
+	public void purchaseTower(Tower tower, Grid grid, int row, int column){
+		if(grid.getStatus(row, column) == null && getMoney() >= tower.getPrice()){
 			setMoney(getMoney() - tower.getPrice());
-			Game.grid.setStatus(tower, row, column);
+			grid.setStatus(tower, row, column);
 		}
 	}
 }

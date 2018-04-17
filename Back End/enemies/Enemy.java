@@ -12,8 +12,8 @@ import towers.Tower;
  * @author parkertewell
  */
 public abstract class Enemy extends AI implements ActionListener {
-	private Timer speed;
-	private int drops;
+	protected Timer speed;
+	protected int drops;
 	public int getDrops(){
 		return drops;
 	}
@@ -41,16 +41,20 @@ public abstract class Enemy extends AI implements ActionListener {
 	 * if the tile is blocked by another enemy do nothing
 	 */
 	public void actionPerformed(ActionEvent e){
+		System.out.println("Test");
 		/* if enemy is in last tile
 		 * subtract a life and then
 		 * delete the enemy
 		 */
 		if(column == 0){
-			Game.player.setHealth(Game.player.getHealth()-1);
-		}else if(Game.grid.getStatus(row, column+1) == null){
+			setHealth(getHealth()-1);
+		}else if(getStatus(row, column+1) == null){
+			System.out.println("Moved");
 			column++;
-			Game.grid.setStatus(this, row, column);
-		}else if(Game.grid.getStatus(row, column+1) instanceof Tower){
+			setStatus(this, row, column);
+			setStatus(null, row, column--);
+		}else if(getStatus(row, column+1) instanceof Tower){
+			System.out.println("Attacked");
 			attack();
 		}
 	}
