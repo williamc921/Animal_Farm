@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.Timer;
 import general.AI;
-import general.Game;
+import general.Grid;
 import towers.Tower;
 /**
  * Current enemies:
@@ -14,6 +14,10 @@ import towers.Tower;
 public abstract class Enemy extends AI implements ActionListener {
 	protected Timer speed;
 	protected int drops;
+	private Grid grid;
+	public Enemy(Grid newgrid){
+		grid = newgrid;
+	}
 	public int getDrops(){
 		return drops;
 	}
@@ -41,6 +45,7 @@ public abstract class Enemy extends AI implements ActionListener {
 	 * if the tile is blocked by another enemy do nothing
 	 */
 	public void actionPerformed(ActionEvent e){
+		
 		System.out.println("Test");
 		/* if enemy is in last tile
 		 * subtract a life and then
@@ -48,12 +53,12 @@ public abstract class Enemy extends AI implements ActionListener {
 		 */
 		if(column == 0){
 			setHealth(getHealth()-1);
-		}else if(getStatus(row, column+1) == null){
+		}else if(grid.getStatus(row, column+1) == null){
 			System.out.println("Moved");
 			column++;
-			setStatus(this, row, column);
-			setStatus(null, row, column--);
-		}else if(getStatus(row, column+1) instanceof Tower){
+			grid.setStatus(this, row, column);
+			grid.setStatus(null, row, column--);
+		}else if(grid.getStatus(row, column+1) instanceof Tower){
 			System.out.println("Attacked");
 			attack();
 		}
