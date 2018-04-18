@@ -89,9 +89,11 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 		}
 	}
 	
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e){
 		if(e.getActionCommand().equals("Start")) {
-			MainGameScreen screen = new MainGameScreen();
+			MainGameScreen screen;
+			
+				screen = new MainGameScreen();
 			AnimalFarm.animalfarm.add(screen);
 			AnimalFarm.animalfarm.remove(0);
 			AnimalFarm.animalfarm.dispose();

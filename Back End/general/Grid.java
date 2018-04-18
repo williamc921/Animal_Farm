@@ -20,8 +20,9 @@ public class Grid {
 	public static final int SHEEP = -1, COW = -1, PIG = -1, 
 			WOLF = -2, CHICKEN = -2, HORSE = -2;
 	private AI[][] grid;
-	public Grid(){
+	public Grid() throws IOException{
 		grid = new AI[5][10];
+		setStatus(new Sheep(this),3,8);
 	}
 	/**
 	 * Use to place towers and boss

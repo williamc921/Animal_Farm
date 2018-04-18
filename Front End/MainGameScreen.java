@@ -11,13 +11,18 @@ import java.awt.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class MainGameScreen extends JPanel {
+import general.Game;
+import general.Grid;
+import general.Player;
 
-	private static final long serialVersionUID = 1L;
+public class MainGameScreen extends JPanel {
 	JButton exit = new JButton("Exit");
 	BufferedImage backg;
 	
 	MainGameScreen() {
+		try {
+			Game game = new Game(1, new Grid(), new Player());
+		} catch (IOException e) {}
 		this.setLayout(null);
 		
 		try{
