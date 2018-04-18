@@ -82,11 +82,11 @@ public class Grid {
 		Enemy enemy = null;
 		int type = (rand.nextInt(3) + 1) * -1;
 		if(type == -1)
-			enemy = new Sheep();
+			enemy = new Sheep(this);
 		else if(type == -2)
-			enemy = new Chicken();
+			enemy = new Chicken(this);
 		else
-			enemy = new Pig();
+			enemy = new Pig(this);
 		return enemy;
 	}
 	/**
