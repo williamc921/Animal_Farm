@@ -1,6 +1,10 @@
 package general;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-public class AI {
+import javax.swing.Timer;
+public abstract class AI implements ActionListener{
+	protected Timer speed;
 	protected String name;
 	protected int health, damage, gridVal, row, column;
 	protected BufferedImage image;
@@ -34,4 +38,5 @@ public class AI {
 	public void setName(String newVal){
 		name = newVal;
 	}
+	public abstract void actionPerformed(ActionEvent e);
 }

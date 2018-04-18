@@ -7,7 +7,9 @@ import general.Grid;
 import general.Player;
 public class EnemyTester {
 	public static void main(String[] args) throws IOException{
-		new Sheep();
-		//new Game(1, new Grid(), new Player());
+		//Game testGame = new Game(1, new Grid(), new Player());
+		//testGame.getGrid().sendEnemy(new Sheep(testGame.getGrid()));
+		//testGame.getGrid().displayGrid();
+		Enemy testEnemy = new Sheep(new Grid());
 	}
 }

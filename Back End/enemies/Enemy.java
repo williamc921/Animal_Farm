@@ -11,12 +11,13 @@ import towers.Tower;
  * -1 sheep, -3 pig
  * @author parkertewell
  */
-public abstract class Enemy extends AI implements ActionListener {
-	protected Timer speed;
+public abstract class Enemy extends AI {
 	protected int drops;
-	private Grid grid;
+	protected Grid grid;
 	public Enemy(Grid newgrid){
 		grid = newgrid;
+		speed = new Timer(1000,this);
+		speed.start();
 	}
 	public int getDrops(){
 		return drops;
@@ -45,7 +46,6 @@ public abstract class Enemy extends AI implements ActionListener {
 	 * if the tile is blocked by another enemy do nothing
 	 */
 	public void actionPerformed(ActionEvent e){
-		
 		System.out.println("Test");
 		/* if enemy is in last tile
 		 * subtract a life and then

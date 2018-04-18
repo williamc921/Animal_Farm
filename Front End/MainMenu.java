@@ -35,7 +35,7 @@ public class MainMenu extends JPanel implements ActionListener{
 			this.add(buttons[i]);
 		}
 		try{
-			backg= ImageIO.read(new File("pics/Animalfarm Background.jpg"));
+			backg= ImageIO.read(new File("pics/Background.jpg"));
 		}catch(Exception E){}
 	}
 	
