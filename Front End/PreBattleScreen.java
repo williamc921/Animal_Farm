@@ -20,10 +20,8 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	JButton[] towers = new JButton[8];
 	JLabel[] towerNames = new JLabel[8];
 	Color[] colors = new Color[] {Color.red, Color.white, Color.black, Color.blue, Color.green, Color.yellow, Color.pink, Color.cyan};	
-	JButton[] chosenTowers = new JButton[6];
-	JLabel[] chosenLabels = new JLabel[6];
-	int choseTowers = 0;
-	
+	int[] chosenTowers = new int[6];
+	JButton[] chosenTowersButtons = new JButton[6];
 	
 	PreBattleScreen() {
 		this.setLayout(null);
@@ -61,19 +59,6 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			this.add(towers[i]);
 		}
 		
-//		for(int i = 0; i < chosenLabels.length; i ++) {
-//			chosenLabels[i] = new JLabel("Chosen Tower " + (i+1)); 
-//			chosenLabels[i].setSize(100,100);
-//		}
-//		
-//		for(int i = 0; i < chosenTowers.length; i ++) {
-//			chosenTowers[i] = new JButton();
-//			chosenTowers[i].addActionListener(this);
-//			chosenTowers[i].setActionCommand(chosenLabels[i].getText());
-//			chosenTowers[i].setSize(100, 100);
-//			towers[i].setLocation((int) (400 + 200 * (i -.5)) - 250 , 550);
-//		}
-//		
 		try{
 			backg= ImageIO.read(new File("pics/Pre Battle Screen.jpg"));
 		}catch(Exception E){}
@@ -118,6 +103,16 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			AnimalFarm.animalfarm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 			AnimalFarm.animalfarm.setVisible(true);
 			AnimalFarm.animalfarm.repaint();
+		} else {
+			for(int i = 0; i < towerNames.length; i++) {
+				if(e.getActionCommand().equals(towerNames[i]) && i < 6) {
+					chosenTowersButtons[i] = towers[i];
+				} else if(e.getActionCommand().equals(towerNames[i]) && i == 6) {
+					chosenTowersButtons[i] = towers[i-1];
+				} else {
+					chosenTowersButtons[i] = towers[i-2];
+				}
+			}
 		}
 	
 	}
