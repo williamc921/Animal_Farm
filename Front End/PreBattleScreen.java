@@ -104,13 +104,12 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			AnimalFarm.animalfarm.setVisible(true);
 			AnimalFarm.animalfarm.repaint();
 		} else {
-			for(int i = 0; i < towerNames.length; i++) {
-				if(e.getActionCommand().equals(towerNames[i]) && i < 6) {
-					chosenTowersButtons[i] = towers[i];
-				} else if(e.getActionCommand().equals(towerNames[i]) && i == 6) {
-					chosenTowersButtons[i] = towers[i-1];
-				} else {
-					chosenTowersButtons[i] = towers[i-2];
+			for(int i = 0; i < towers.length; i ++) {
+				if(e.getActionCommand().equals(towerNames[i])) {
+					towers[i].setLocation((int) (400 + 200 * (i -.5)) - 250 , 450);
+					towerNames[i].setLocation((int) (400 + 200 * (i -.5)) - 225 , 550);
+					this.add(towers[i]);
+					this.add(towerNames[i]);
 				}
 			}
 		}
