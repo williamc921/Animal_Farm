@@ -26,7 +26,7 @@ public class MainGameScreen extends JPanel {
 		this.setLayout(null);
 		
 		try{
-			backg= ImageIO.read(new File("pics/Newest Grass Image.png"));
+			backg= ImageIO.read(new File("pics/Grass.png"));
 		}catch(Exception E){}
 	}
 	
