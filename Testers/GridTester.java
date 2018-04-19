@@ -28,6 +28,7 @@ public class GridTester {
 	private static void movingEnemyTest() throws IOException{
 		Game testGame = new Game(new Grid(), new Player());
 		testGame.getGrid().sendEnemy(new Sheep(testGame.getGrid()));
+		testGame.getGrid().displayGrid();
 		while(true){
 			
 		}

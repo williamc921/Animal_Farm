@@ -50,9 +50,6 @@ public abstract class Enemy extends AI {
 	 * if the tile is blocked by another enemy do nothing
 	 */
 	public void actionPerformed(ActionEvent e){
-		TEST = true;
-		System.out.println("Column "+column);
-		System.out.println("Row "+row);
 		/* if enemy is in last tile
 		 * subtract a life and then
 		 * delete the enemy
@@ -63,11 +60,14 @@ public abstract class Enemy extends AI {
 		}else if(grid.getStatus(row, column-1) == null){
 			System.out.println("Moved");
 			grid.setStatus(null, row, column);
-			grid.setStatus(this, row, column--);
+			grid.setStatus(this, row, column-1);
+			column--;
 		}else if(grid.getStatus(row, column-1) instanceof Tower){
 			System.out.println("Attacked");
 			attack();
 		}
+		System.out.println("Column "+column);
+		System.out.println("Row "+row);
 		grid.displayGrid();
 	}
 }
