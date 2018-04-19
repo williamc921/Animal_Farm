@@ -9,7 +9,7 @@ import enemies.Sheep;
 /**
  * @author parkertewell
  * Game
- * Plots (Matrix, 5 rows, 10 columns)
+ * Plots (Matrix, 4 rows, 10 columns)
  * The 10th column is only used to place enemies
  * Money, lives, enemies left
  * Towers available
@@ -21,8 +21,8 @@ public class Grid {
 			WOLF = -2, CHICKEN = -2, HORSE = -2;
 	private AI[][] grid;
 	public Grid() throws IOException{
-		grid = new AI[5][10];
-		setStatus(new Sheep(this),3,8);
+		grid = new AI[4][10];
+		//setStatus(new Sheep(this),3,8);
 	}
 	/**
 	 * Use to place towers and boss
@@ -38,10 +38,10 @@ public class Grid {
 		return grid[row][column];
 	}
 	/**
-	 * CAN ONLY SEND 5 ENEMIES AT A TIME
+	 * CAN ONLY SEND 4 ENEMIES AT A TIME
 	 * Use to send many low level enemies, 
 	 * must stagger the waves so the user isnt overwhelmed.
-	 * i.e. if you wanted to send 20 enemies send 4 waves of 5 enemies each
+	 * i.e. if you wanted to send 20 enemies send 4 waves of 4 enemies each
 	 * Order of variables is regular, fast, tank
 	 * @param regular Amount of regular enemies
 	 * @param fast Amount of fast enemies
@@ -73,7 +73,7 @@ public class Grid {
 	}
 	public boolean columnClear(int column){
 		boolean clear = true;
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 4; i++)
 			if(getStatus(i,column)!=null)
 				clear = false;
 		return clear;
@@ -97,11 +97,13 @@ public class Grid {
 	 */
 	public void sendEnemy(AI type){
 		Random rand = new Random();
-		int row = (rand.nextInt(5));
+		int row = (rand.nextInt(4));
+		type.setColumn(9);
+		type.setRow(row);
 		setStatus(type, row, 9);
 	}
 	public void displayGrid(){
-		for(int i = 0; i < 5; i++){
+		for(int i = 0; i < 4; i++){
 			for(int j = 0; j < 10; j++)
 				if(getStatus(i, j)!=null)
 					System.out.print(getStatus(i, j).getName() + " ");

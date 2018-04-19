@@ -13,11 +13,15 @@ import towers.Tower;
  */
 public abstract class Enemy extends AI {
 	protected int drops;
-	protected Grid grid;
+	protected Grid grid = null;
+	public static boolean TEST = false;
 	public Enemy(Grid newgrid){
 		grid = newgrid;
 		speed = new Timer(1000,this);
 		speed.start();
+	}
+	public Grid getGrid(){
+		return grid;
 	}
 	public int getDrops(){
 		return drops;
@@ -46,21 +50,24 @@ public abstract class Enemy extends AI {
 	 * if the tile is blocked by another enemy do nothing
 	 */
 	public void actionPerformed(ActionEvent e){
-		System.out.println("Test");
+		TEST = true;
+		System.out.println("Column "+column);
+		System.out.println("Row "+row);
 		/* if enemy is in last tile
 		 * subtract a life and then
 		 * delete the enemy
 		 */
 		if(column == 0){
+			System.out.println("Attacking House");
 			setHealth(getHealth()-1);
-		}else if(grid.getStatus(row, column+1) == null){
+		}else if(grid.getStatus(row, column-1) == null){
 			System.out.println("Moved");
-			column++;
-			grid.setStatus(this, row, column);
-			grid.setStatus(null, row, column--);
-		}else if(grid.getStatus(row, column+1) instanceof Tower){
+			grid.setStatus(null, row, column);
+			grid.setStatus(this, row, column--);
+		}else if(grid.getStatus(row, column-1) instanceof Tower){
 			System.out.println("Attacked");
 			attack();
 		}
+		grid.displayGrid();
 	}
 }

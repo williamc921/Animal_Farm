@@ -11,5 +11,10 @@ public class EnemyTester {
 		//testGame.getGrid().sendEnemy(new Sheep(testGame.getGrid()));
 		//testGame.getGrid().displayGrid();
 		Enemy testEnemy = new Sheep(new Grid());
+		while(true){
+			if(testEnemy.TEST)
+				testEnemy.getGrid().displayGrid();
+		}
+		
 	}
 }
