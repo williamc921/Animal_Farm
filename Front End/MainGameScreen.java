@@ -1,33 +1,41 @@
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.awt.*;
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
-import general.Game;
-import general.Grid;
-import general.Player;
+import javax.swing.JButton;
 
 public class MainGameScreen extends JPanel {
 	JButton exit = new JButton("Exit");
 	BufferedImage backg;
+	private JLabel[] towerLabels = new JLabel[6];
 	
 	MainGameScreen() {
-		try {
-			Game game = new Game(1, new Grid(), new Player());
-		} catch (IOException e) {}
 		this.setLayout(null);
 		
+//		Font fontf = new Font("Castellar",10,10);
+//		
+//		for(int i = 0; i < towerLabels.length; i++) {
+//			towerLabels[i] = new JLabel("Tower " + (i+1));
+//			towerLabels[i].setSize(100,50);
+//			towerLabels[i].setFont(fontf);
+//			towerLabels[i].setLocation(70+150*i,675);
+//			this.add(towerLabels[i]);
+//		}
+			
 		try{
 			backg= ImageIO.read(new File("pics/Grass.png"));
 		}catch(Exception E){}
+		
 	}
 	
 	public void paint(Graphics g){
