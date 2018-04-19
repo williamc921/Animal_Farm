@@ -19,7 +19,7 @@ public class MainGameScreen extends JPanel {
 	BufferedImage backg;
 	private JLabel[] towerLabels = new JLabel[6];
 	
-	MainGameScreen() {
+	MainGameScreen(JButton[] chosenTowers) {
 		this.setLayout(null);
 		
 //		Font fontf = new Font("Castellar",10,10);
