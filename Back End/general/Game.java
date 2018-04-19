@@ -13,7 +13,7 @@ public class Game{
 	//enemies stop one plot in front on the towers and attack them with the same speed
 	private Grid grid;
 	private Player player;
-	public Game(int waves, Grid newGrid, Player newPlayer) throws IOException{
+	public Game(Grid newGrid, Player newPlayer) throws IOException{
 		grid = newGrid;
 		player = newPlayer;
 	}

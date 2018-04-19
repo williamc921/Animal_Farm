@@ -1,4 +1,6 @@
 package towers;
+import java.awt.event.ActionEvent;
+
 import general.AI;
 /**
  * Current towers:
@@ -12,5 +14,10 @@ public abstract class Tower extends AI{
 	}
 	public void setPrice(int newVal){
 		price = newVal;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

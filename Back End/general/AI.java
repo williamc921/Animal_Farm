@@ -23,6 +23,12 @@ public abstract class AI implements ActionListener{
 	public int getGridVal(){
 		return gridVal;
 	}
+	public int getColumn(){
+		return column;
+	}
+	public int getRow(){
+		return row;
+	}
 	public void setImage(BufferedImage newImage){
 		image = newImage;
 	}
@@ -37,6 +43,12 @@ public abstract class AI implements ActionListener{
 	}
 	public void setName(String newVal){
 		name = newVal;
+	}
+	public void setColumn(int newVal){
+		column = newVal;
+	}
+	public void setRow(int newVal){
+		row = newVal;
 	}
 	public abstract void actionPerformed(ActionEvent e);
 }
