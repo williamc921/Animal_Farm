@@ -22,20 +22,13 @@ public class MainGameScreen extends JPanel {
 	MainGameScreen(JButton[] chosenTowers) {
 		this.setLayout(null);
 		
-//		Font fontf = new Font("Castellar",10,10);
-//		
-//		for(int i = 0; i < towerLabels.length; i++) {
-//			towerLabels[i] = new JLabel("Tower " + (i+1));
-//			towerLabels[i].setSize(100,50);
-//			towerLabels[i].setFont(fontf);
-//			towerLabels[i].setLocation(70+150*i,675);
-//			this.add(towerLabels[i]);
-//		}
+		
+		
+		
 			
 		try{
 			backg= ImageIO.read(new File("pics/Grass.png"));
 		}catch(Exception E){}
-		
 	}
 	
 	public void paint(Graphics g){
