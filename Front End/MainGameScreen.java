@@ -12,15 +12,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import general.Game;
+
 import javax.swing.JButton;
 
 public class MainGameScreen extends JPanel {
 	JButton exit = new JButton("Exit");
 	BufferedImage backg;
 	private JLabel[] towerLabels = new JLabel[6];
+	Game currentGame;
 	
-	MainGameScreen(JButton[] chosenTowers) {
+	MainGameScreen(Game game) {
 		this.setLayout(null);
+		
+		currentGame = game;
 
 			
 		try{
