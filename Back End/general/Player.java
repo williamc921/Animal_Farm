@@ -18,8 +18,11 @@ public class Player {
 	public int getMoney(){
 		return money;
 	}
-	public void setTower(Tower newVal){
+	public void addTower(Tower newVal){
 		towers.add(newVal);
+	}
+	public void removeTower(int num){
+		towers.remove(num);
 	}
 	public void setHealth(int newVal){
 		health = newVal;
