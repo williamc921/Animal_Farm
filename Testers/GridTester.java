@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import enemies.Sheep;
 import general.Game;
 import general.Grid;

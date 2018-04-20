@@ -1,4 +1,6 @@
 package general;
+import java.util.ArrayList;
+
 import towers.Tower;
 /**
  * health, money, avalible towers
@@ -6,15 +8,18 @@ import towers.Tower;
  */
 public class Player {
 	private int health = 10, money = 100;
-	private Tower[] towers = new Tower[5];
+	private ArrayList<Tower> towers = new ArrayList();
 	public Tower getTower(int num){
-		return towers[num];
+		return towers.get(num);
 	}
 	public int getHealth(){
 		return health;
 	}
 	public int getMoney(){
 		return money;
+	}
+	public void setTower(Tower newVal){
+		towers.add(newVal);
 	}
 	public void setHealth(int newVal){
 		health = newVal;
