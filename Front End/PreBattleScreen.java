@@ -11,6 +11,11 @@ import java.awt.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import general.Game;
+import general.Player;
+import towers.Peashooter;
+import towers.Tower;
+
 public class PreBattleScreen extends JPanel implements ActionListener {
 
 	int towersSelected = 0;
@@ -22,6 +27,8 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	Color[] colors = new Color[] {Color.red, Color.white, Color.black, Color.blue, Color.green, Color.yellow, Color.pink, Color.cyan};	
 	int[] chosenTowers = new int[6];
 	JButton[] chosenTowersButtons = new JButton[4];
+	int towerCounter = 0;
+	private Player player = new Player();
 	
 	PreBattleScreen() {
 		this.setLayout(null);
@@ -77,8 +84,14 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e){
 			
 		if(e.getActionCommand().equals("Start")) {
-			MainGameScreen screen;
-			screen = new MainGameScreen(chosenTowersButtons);
+			MainGameScreen screen = null;
+			try {
+				screen = new MainGameScreen(new Game(null, player));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			//screen = new MainGameScreen();
 			AnimalFarm.animalfarm.add(screen);
 			AnimalFarm.animalfarm.remove(0);
 			AnimalFarm.animalfarm.dispose();
@@ -110,11 +123,27 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 		}
 
 		for(int i = 0; i < towers.length; i++) {
-			if(e.getActionCommand().equals(towerNames[i].getText()) && towers[i].getLocation() != new Point((int) (400 + 200 * (i -.5)) - 250 , 250)) {
-				towers[i].move((int) (400 + 200 * (i -.5)) - 250 , 450);
-				chosenTowersButtons[i] = towers[i];
+			if(e.getActionCommand().equals(towerNames[i].getText()) && towers[i].getLocation() != new Point((int) (400 + 200 * (i -.5)) - 250 , 250)) {		
+					while(towerCounter <= 3) {
+						towers[i].move((int) (400 + 200 * (i -.5)) - 250 , 450);
+						Peashooter newTower = null;
+						try {
+							newTower = new Peashooter();
+						} catch (IOException e1) {
+						}		
+						player.addTower(newTower);
+						towerCounter++;
+				}
 			} else if(e.getActionCommand().equals(towerNames[i].getText())  && towers[i].getLocation() != new Point((int) (400 + 200 * (i -.5)) - 250 , 450)){
+				try {
+					Peashooter newTower = new Peashooter();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				towers[i].setLocation((int) (400 + 200 * (i -.5)) - 250 , 250);
+				player.removeTower(1);
+				towerCounter--;
 			} else {
 				
 			}
