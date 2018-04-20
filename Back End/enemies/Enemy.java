@@ -17,8 +17,6 @@ public abstract class Enemy extends AI {
 	public static boolean TEST = false;
 	public Enemy(Grid newgrid){
 		grid = newgrid;
-		speed = new Timer(1000,this);
-		speed.start();
 	}
 	public Grid getGrid(){
 		return grid;
