@@ -21,7 +21,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 	JLabel[] towerNames = new JLabel[8];
 	Color[] colors = new Color[] {Color.red, Color.white, Color.black, Color.blue, Color.green, Color.yellow, Color.pink, Color.cyan};	
 	int[] chosenTowers = new int[6];
-	JButton[] chosenTowersButtons = new JButton[6];
+	JButton[] chosenTowersButtons = new JButton[4];
 	
 	PreBattleScreen() {
 		this.setLayout(null);
@@ -78,7 +78,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 			
 		if(e.getActionCommand().equals("Start")) {
 			MainGameScreen screen;
-			screen = new MainGameScreen(towers);
+			screen = new MainGameScreen(chosenTowersButtons);
 			AnimalFarm.animalfarm.add(screen);
 			AnimalFarm.animalfarm.remove(0);
 			AnimalFarm.animalfarm.dispose();
@@ -112,6 +112,7 @@ public class PreBattleScreen extends JPanel implements ActionListener {
 		for(int i = 0; i < towers.length; i++) {
 			if(e.getActionCommand().equals(towerNames[i].getText()) && towers[i].getLocation() != new Point((int) (400 + 200 * (i -.5)) - 250 , 250)) {
 				towers[i].move((int) (400 + 200 * (i -.5)) - 250 , 450);
+				chosenTowersButtons[i] = towers[i];
 			} else if(e.getActionCommand().equals(towerNames[i].getText())  && towers[i].getLocation() != new Point((int) (400 + 200 * (i -.5)) - 250 , 450)){
 				towers[i].setLocation((int) (400 + 200 * (i -.5)) - 250 , 250);
 			} else {

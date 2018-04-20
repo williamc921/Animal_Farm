@@ -21,10 +21,7 @@ public class MainGameScreen extends JPanel {
 	
 	MainGameScreen(JButton[] chosenTowers) {
 		this.setLayout(null);
-		
-		
-		
-		
+
 			
 		try{
 			backg= ImageIO.read(new File("pics/Grass.png"));
