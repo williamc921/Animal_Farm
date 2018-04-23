@@ -20,7 +20,7 @@ public class Grid {
 	public static final int SHEEP = -1, COW = -1, PIG = -1, 
 			WOLF = -2, CHICKEN = -2, HORSE = -2;
 	private AI[][] grid;
-	public Grid() throws IOException{
+	public Grid(){
 		grid = new AI[4][10];
 		//setStatus(new Sheep(this),3,8);
 	}
@@ -83,11 +83,11 @@ public class Grid {
 		Enemy enemy = null;
 		int type = (rand.nextInt(3) + 1) * -1;
 		if(type == -1)
-			enemy = new Sheep(this);
+			enemy = new Sheep();
 		else if(type == -2)
-			enemy = new Chicken(this);
+			enemy = new Chicken();
 		else
-			enemy = new Pig(this);
+			enemy = new Pig();
 		return enemy;
 	}
 	/**

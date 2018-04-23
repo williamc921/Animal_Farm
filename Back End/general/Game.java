@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.Timer;
 
+import enemies.Sheep;
 import towers.Tower;
 public class Game{
 	//Multi-threading?
@@ -11,11 +12,19 @@ public class Game{
 	//1600x900
 	//make sure the enemies dont march thru the towers
 	//enemies stop one plot in front on the towers and attack them with the same speed
-	private Grid grid;
-	private Player player;
+	public static Grid grid = new Grid();
+	public static Player player = new Player();
 	public Game(Grid newGrid, Player newPlayer) throws IOException{
 		grid = newGrid;
 		player = newPlayer;
+	}
+	public Game() throws IOException{
+		grid = new Grid();
+		player = new Player();
+	}
+	public void runGame() throws IOException{
+		grid.sendEnemy(new Sheep());
+		
 	}
 	public Grid getGrid(){
 		return grid;

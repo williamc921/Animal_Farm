@@ -9,9 +9,6 @@ import general.Game;
  * @author parkertewell
  */
 public abstract class Tower extends AI{
-	public Tower(Game newGame) {
-		super(newGame);
-	}
 	private int price;
 	public int getPrice(){
 		return price;
