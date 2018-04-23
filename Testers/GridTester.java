@@ -26,7 +26,7 @@ public class GridTester {
 		System.out.println("Initial wave");
 		testGame.getGrid().displayGrid();
 		System.out.println("Placing a tower");
-		testGame.getPlayer().purchaseTower(new Peashooter(), testGame.getGrid(), 0, 0);
+		testGame.getPlayer().purchaseTower(new Peashooter(testGame), testGame.getGrid(), 0, 0);
 		testGame.getGrid().displayGrid();
 		System.out.println("Sending an overlapping wave");
 		testGame.getGrid().sendWave(2, 2, 1);
