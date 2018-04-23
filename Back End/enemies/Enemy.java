@@ -15,13 +15,8 @@ import towers.Tower;
  */
 public abstract class Enemy extends AI {
 	protected int drops;
-	protected Game game = null;
-	protected Grid grid = null;
-	protected Player player = null;
 	public Enemy(Game newGame){
-		game = newGame;
-		grid = newGame.getGrid();
-		player = newGame.getPlayer();
+		super(newGame);
 	}
 	public Grid getGrid(){
 		return grid;

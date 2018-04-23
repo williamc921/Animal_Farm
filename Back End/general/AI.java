@@ -8,6 +8,14 @@ public abstract class AI implements ActionListener{
 	protected String name;
 	protected int health, damage, gridVal, row, column;
 	protected BufferedImage image;
+	protected Game game = null;
+	protected Grid grid = null;
+	protected Player player = null;
+	public AI(Game newGame){
+		game = newGame;
+		grid = newGame.getGrid();
+		player = newGame.getPlayer();
+	}
 	public String getName(){
 		return name;
 	}
