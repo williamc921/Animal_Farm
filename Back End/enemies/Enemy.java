@@ -4,7 +4,9 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.Timer;
 import general.AI;
+import general.Game;
 import general.Grid;
+import general.Player;
 import towers.Tower;
 /**
  * Current enemies:
@@ -13,10 +15,13 @@ import towers.Tower;
  */
 public abstract class Enemy extends AI {
 	protected int drops;
+	protected Game game = null;
 	protected Grid grid = null;
-	public static boolean TEST = false;
-	public Enemy(Grid newgrid){
-		grid = newgrid;
+	protected Player player = null;
+	public Enemy(Game newGame){
+		game = newGame;
+		grid = newGame.getGrid();
+		player = newGame.getPlayer();
 	}
 	public Grid getGrid(){
 		return grid;
@@ -54,7 +59,8 @@ public abstract class Enemy extends AI {
 		 */
 		if(column == 0){
 			System.out.println("Attacking House");
-			setHealth(getHealth()-1);
+			player.setHealth(player.getHealth()-1);
+			System.out.println("Player Health: " + player.getHealth());
 		}else if(grid.getStatus(row, column-1) == null){
 			System.out.println("Moved");
 			grid.setStatus(null, row, column);
@@ -62,7 +68,9 @@ public abstract class Enemy extends AI {
 			column--;
 		}else if(grid.getStatus(row, column-1) instanceof Tower){
 			System.out.println("Attacked");
-			attack();
+			grid.getStatus(row, column-1).setHealth(grid.getStatus(row, column-1).getHealth()-getDamage());
+			if(grid.getStatus(row, column-1).getHealth()<=0)
+				grid.setStatus(null, row, column-1);
 		}
 		System.out.println("Column "+column);
 		System.out.println("Row "+row);

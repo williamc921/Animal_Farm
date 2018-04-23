@@ -10,11 +10,9 @@ public class EnemyTester {
 		//Game testGame = new Game(1, new Grid(), new Player());
 		//testGame.getGrid().sendEnemy(new Sheep(testGame.getGrid()));
 		//testGame.getGrid().displayGrid();
-		Enemy testEnemy = new Sheep(new Grid());
-		while(true){
-			if(testEnemy.TEST)
-				testEnemy.getGrid().displayGrid();
-		}
-		
+		Enemy testEnemy = new Sheep(new Game(new Grid(), new Player()));
+		testEnemy.getGrid().displayGrid();
+
+
 	}
 }
