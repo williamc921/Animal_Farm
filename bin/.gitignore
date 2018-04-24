@@ -1,4 +1,11 @@
 /GridTester$1.class
+<<<<<<< HEAD
 /general/
 /towers/
 /enemies/
+=======
+/enemies/
+/general/
+/towers/
+/LoseScreen.class
+>>>>>>> branch 'master' of https://github.com/EthanCarpenter/Animal_Farm
