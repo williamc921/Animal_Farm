@@ -4,17 +4,30 @@ import general.Game;
 import general.Grid;
 import general.Player;
 import towers.Peashooter;
+
+import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 public class GridTester {
-	public static void main(String args[]) throws IOException{
+	public static void main(String args[]) throws IOException, InterruptedException{
 		attackingEnemyTest();
 	}
-	private static void attackingEnemyTest() throws IOException{
+	private static void attackingEnemyTest() throws IOException, InterruptedException{
 		//Game testGame = new Game(new Grid(), new Player());
 		for(int i = 0; i < 4; i++)
 			Game.player.purchaseTower(new Peashooter(), Game.grid, i, 0);
 		Game.grid.sendEnemy(new Sheep());
 		Game.grid.displayGrid();
-		while(Game.player.getHealth()>0){}
+		  
+		   // Scanner scan = new Scanner(System.in);
+		   // int time = scan.nextInt() * 60; // Convert to seconds
+		   // long delay = time * 1000;
+		      Thread.sleep(50000);
+		      System.out.println("HEALTH: "+Game.player.getHealth());
+		      //delay = delay - 1000;
+
+		    
+		  
 	}
 	private static void basicTests() throws IOException{
 		//	int[][]waves = new int[2][2];
