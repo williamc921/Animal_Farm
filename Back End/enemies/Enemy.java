@@ -21,20 +21,8 @@ public abstract class Enemy extends AI {
 	public int getDrops(){
 		return drops;
 	}
-	/**
-	 * @return time in milliseconds for the enemy to advance 1 plot
-	 */
-	public Timer getSpeed(){
-		return speed;
-	}
 	public void setDrops(int newVal){
 		drops = newVal;
-	}
-	/**
-	 * @param newVal time in milliseconds for the enemy to advance 1 plot
-	 */
-	public void setSpeed(int newVal){
-		speed = new Timer(newVal, this);
 	}
 	public void attack(){
 		
@@ -66,6 +54,7 @@ public abstract class Enemy extends AI {
 		}
 		System.out.println("Column "+column);
 		System.out.println("Row "+row);
+		System.out.println(getHealth());
 		Game.grid.displayGrid();
 	}
 }

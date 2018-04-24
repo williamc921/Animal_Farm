@@ -8,9 +8,6 @@ public abstract class AI implements ActionListener{
 	protected String name;
 	protected int health, damage, gridVal, row, column;
 	protected BufferedImage image;
-	protected Game game = null;
-	protected Grid grid = null;
-	protected Player player = null;
 	public String getName(){
 		return name;
 	}
@@ -32,6 +29,13 @@ public abstract class AI implements ActionListener{
 	public int getRow(){
 		return row;
 	}
+	/**
+	 * @return time in milliseconds for the enemy to advance 1 plot
+	 * OR the time in between shots for a tower
+	 */
+	public Timer getSpeed(){
+		return speed;
+	}
 	public void setImage(BufferedImage newImage){
 		image = newImage;
 	}
@@ -52,6 +56,13 @@ public abstract class AI implements ActionListener{
 	}
 	public void setRow(int newVal){
 		row = newVal;
+	}
+	/**
+	 * @param newVal time in milliseconds for the enemy to advance 1 plot
+	 * OR the time in between shots for a tower
+	 */
+	public void setSpeed(int newVal){
+		speed = new Timer(newVal, this);
 	}
 	public abstract void actionPerformed(ActionEvent e);
 }

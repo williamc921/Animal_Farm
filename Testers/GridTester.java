@@ -18,16 +18,8 @@ public class GridTester {
 			Game.player.purchaseTower(new Peashooter(), Game.grid, i, 0);
 		Game.grid.sendEnemy(new Sheep());
 		Game.grid.displayGrid();
-		  
-		   // Scanner scan = new Scanner(System.in);
-		   // int time = scan.nextInt() * 60; // Convert to seconds
-		   // long delay = time * 1000;
-		      Thread.sleep(50000);
-		      System.out.println("HEALTH: "+Game.player.getHealth());
-		      //delay = delay - 1000;
-
-		    
-		  
+		Thread.sleep(50000);
+		System.out.println("HEALTH: "+Game.player.getHealth());  
 	}
 	private static void basicTests() throws IOException{
 		//	int[][]waves = new int[2][2];

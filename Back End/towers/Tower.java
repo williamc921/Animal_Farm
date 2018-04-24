@@ -17,13 +17,18 @@ public abstract class Tower extends AI{
 		price = newVal;
 	}
 	public void actionPerformed(ActionEvent e) {
-		if(searchRow() != -1)
-			grid.getStatus(row, searchRow()).setHealth(grid.getStatus(row, searchRow()).getHealth()-getDamage());
+		int column = searchRow();
+		if(column != -1){
+			Game.grid.getStatus(row, column).setHealth(Game.grid.getStatus(row, column).getHealth()-getDamage());
+			System.out.println("Shot enemy");
+		}
 	}
 	private int searchRow(){
-		for(int i = row; i < 10; i++)
-			if(grid.getStatus(row, i) instanceof Enemy)
+		for(int i = row; i < 10; i++){
+			//System.out.println(Game.grid.getStatus(row, i) instanceof Enemy);
+			if(Game.grid.getStatus(row, i) instanceof Enemy)
 				return i;
+		}
 		return -1;
 	}
 }

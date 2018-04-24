@@ -11,8 +11,10 @@ public class Peashooter extends Tower{
 		super();
 		setName("Psht");
 		setHealth(100);
-		setDamage(10);
+		setDamage(20);
 		setGridVal(1);
 		setPrice(10);
+		setSpeed(1000);
+		speed.start();
 	}
 }
